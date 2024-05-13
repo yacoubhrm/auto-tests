@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h> // ajout pour atof
+#include <string.h> 
 #include "./../include/calculator.h"
 
 int main(int argc, char *argv[]){
