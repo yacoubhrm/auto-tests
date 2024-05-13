@@ -18,6 +18,10 @@ int main(int argc, char *argv[]){
 		r = _sub(atof(a), atof(b));
 		printf("%lf",r);
 	}
+	else if (strcmp(op, "carre") == 0) {
+		r = _carre(atof(a));
+		printf("%lf",r);
+	}
 	else if (strcmp(op, "mul") == 0) {
 		r = _mul(atof(a), atof(b));
 		printf("%lf",r);
