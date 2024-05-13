@@ -1,16 +1,20 @@
-name: Automatisation des tests
-on: push
+name: Automatisation des tests   # Nom du workflow
+
+on: push  # Déclenche le workflow à chaque push
+
 jobs:
-  Compilation:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Compilation
-        run: |
-          last_directory=$(basename ${{ runner.workspace }})
-          git clone https://github.com/${{ github.repository }}.git
-          cd ./$last_directory
-          mkdir build
-          cd build
-          cmake ..
-          make
-          make test
+  Compilation:  # Nom du job
+    runs-on: ubuntu-latest  # Spécifie l'environnement d'exécution (dans ce cas, Ubuntu)
+
+    steps:  # Les étapes à suivre pour exécuter ce job
+      - name: Compilation  # Nom de l'étape
+        run: |  # Commandes à exécuter
+          last_directory=$(basename ${{ runner.workspace }})  # Récupère le nom du répertoire de travail
+          git clone https://github.com/${{ github.repository }}.git  # Clone le repository GitHub
+          cd ./$last_directory  # Se déplace dans le répertoire cloné
+          mkdir build  # Crée un répertoire de build
+          cd build  # Se déplace dans le répertoire de build
+          cmake ..  # Configuration du projet avec CMake
+          make  # Compilation du projet avec make
+          make test  # Exécute les tests avec make test
+
